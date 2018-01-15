@@ -1,23 +1,69 @@
-" Create symlink to this file from home folder
+" Sigvald Marholm's personal vim settings
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " VUNDLE (PACKAGE MANAGING)
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
-filetype off " Temporarily turn off while setting up Vundle
+set nocompatible
+filetype off " Must be off while setting up Vundle
 
 set rtp+=~/.vim/bundle/vundle
-call vundle#rc()
+call vundle#begin()
 
 " Packages
-Bundle 'gmarik/vundle'
-Bundle 'ivanov/vim-ipython'
+Plugin 'gmarik/vundle'
+Plugin 'ivanov/vim-ipython'
+Plugin 'tpope/vim-fugitive'
+Plugin 'tpope/vim-commentary'
+Plugin 'tpope/vim-surround'
+Plugin 'scrooloose/nerdtree'
+" Plugin 'scrooloose/nerdtree-tabs'
+Plugin 'scrooloose/nerdtree-git-plugin'
+Plugin 'nvie/vim-flake8'
+Plugin 'vim-scripts/indentpython.vim'
+Plugin 'godlygeek/tabular'
+Plugin 'vim-airline/vim-airline'
+Plugin 'vim-airline/vim-airline-themes'
+Plugin 'tmhedberg/SimpylFold'
+" Plugin 'Valloric/YouCompleteMe'
+" Plugin 'vim-syntastic/syntastic'
+" Plugin 'nvie/vim-flake8'
+Plugin 'jnurmine/Zenburn'
+Plugin 'altercation/vim-colors-solarized'
+Plugin 'kien/ctrlp.vim'
+Plugin 'NLKNguyen/papercolor-theme'
 
+call vundle#end()
 filetype plugin indent on
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " MISCELLANEOUS SETTINGS
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+" For vim-airline, install powerline-fonts from pacman and use it with this
+" line
+" let g:airline_powerline_fonts = 1
+
+set foldmethod=indent
+set foldlevel=99
+nnoremap <space> za
+
+let g:airline#extensions#tabline#enabled = 1
+
+" au BufRead,BufNewFile *.py,*.pyw,*.c,*.h match ExtraWhitespace /\s\+$/
+" set encoding=utf-8
+" if has('gui_running')
+"   set background=dark
+"   colorscheme solarized
+" else
+"   colorscheme zenburn
+" endif
+
+set background=light
+colorscheme PaperColor
+let g:airline_theme='papercolor'
+
+let python_highlight_all=1
 
 " Where to put new windows when splitting
 set splitright
@@ -27,12 +73,14 @@ set splitbelow
 syntax on
 set number
 
+if exists(':Tabularize')
+	nnoremap <Leader>t :Tab /
+	vnoremap <Leader>t :Tab /
+endif
+
 " Tab behavior
 set tabstop=4
 set shiftwidth=4
-
-" Filetype specific scripts stored in ~/.vim/ftplugins/<filetype>.vim
-filetype plugin on
 
 " Automatically update changed files
 set autoread
@@ -50,7 +98,7 @@ set hidden
 " Enables mouse for resizing windows and visual selection amongst others
 " One problem is that Ctrl+Shift+C/V cannot be used to copy-past to/from
 " system clipboard.
-" set mouse=a
+set mouse=a
 
 " For system clipboard to work in vim (not through console but through vim
 " itself, e.g. the registers + and *), one must have vim installed with gtk
@@ -72,6 +120,8 @@ nnoremap <C-h> <C-W><C-h>
 nnoremap <C-j> <C-W><C-j>
 nnoremap <C-k> <C-W><C-k>
 nnoremap <C-l> <C-W><C-l>
+
+nnoremap <f5> :!ctags -R<CR>
 
 " Find letters forward with ø
 " noremap ø ;
