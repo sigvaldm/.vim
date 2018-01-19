@@ -12,14 +12,14 @@ call vundle#begin()
 
 " Packages
 Plugin 'gmarik/vundle'
-Plugin 'ivanov/vim-ipython'
 Plugin 'tpope/vim-fugitive'
 Plugin 'tpope/vim-commentary'
 Plugin 'tpope/vim-surround'
-Plugin 'scrooloose/nerdtree'
+Plugin 'tpope/vim-unimpaired'
+" Plugin 'scrooloose/nerdtree'
 " Plugin 'scrooloose/nerdtree-tabs'
-Plugin 'scrooloose/nerdtree-git-plugin'
-Plugin 'nvie/vim-flake8'
+" Plugin 'scrooloose/nerdtree-git-plugin'
+" Plugin 'nvie/vim-flake8'
 Plugin 'vim-scripts/indentpython.vim'
 Plugin 'godlygeek/tabular'
 Plugin 'vim-airline/vim-airline'
@@ -28,10 +28,13 @@ Plugin 'tmhedberg/SimpylFold'
 " Plugin 'Valloric/YouCompleteMe'
 " Plugin 'vim-syntastic/syntastic'
 " Plugin 'nvie/vim-flake8'
-Plugin 'jnurmine/Zenburn'
-Plugin 'altercation/vim-colors-solarized'
+" Plugin 'jnurmine/Zenburn'
+" Plugin 'altercation/vim-colors-solarized'
 Plugin 'kien/ctrlp.vim'
 Plugin 'NLKNguyen/papercolor-theme'
+" Plugin 'kana/vim-textobj-lastpat' " Didn't work
+Plugin 'sigvaldm/vim-ipython'
+Plugin 'nelstrom/vim-visual-star-search'
 
 call vundle#end()
 filetype plugin indent on
@@ -44,11 +47,17 @@ filetype plugin indent on
 " line
 " let g:airline_powerline_fonts = 1
 
+" command Python python3
+command! -nargs=+ Python python3 <args>
+
 set foldmethod=indent
 set foldlevel=99
-nnoremap <space> za
 
 let g:airline#extensions#tabline#enabled = 1
+
+set hlsearch
+set incsearch
+
 
 " au BufRead,BufNewFile *.py,*.pyw,*.c,*.h match ExtraWhitespace /\s\+$/
 " set encoding=utf-8
@@ -72,11 +81,6 @@ set splitbelow
 " Formatting (highlighting, numbers, etc.)
 syntax on
 set number
-
-if exists(':Tabularize')
-	nnoremap <Leader>t :Tab /
-	vnoremap <Leader>t :Tab /
-endif
 
 " Tab behavior
 set tabstop=4
@@ -116,12 +120,34 @@ set mouse=a
 cnoremap <C-p> <Up>
 cnoremap <C-n> <Down>
 
+" Navigate between windows
 nnoremap <C-h> <C-W><C-h>
 nnoremap <C-j> <C-W><C-j>
 nnoremap <C-k> <C-W><C-k>
 nnoremap <C-l> <C-W><C-l>
 
-nnoremap <f5> :!ctags -R<CR>
+" Swap windows
+nnoremap <C-r> <C-W><C-r>
+
+" nnoremap <f5> :!ctags -R<CR>
 
 " Find letters forward with ø
 " noremap ø ;
+
+nnoremap <Leader>t :Tab /
+vnoremap <Leader>t :Tab /
+
+nnoremap <space> za
+
+" Mappings for vim-unimpaired, etc.
+" (The < and > are used for indentation)
+nmap ø [
+omap ø [
+xmap ø [
+nmap æ ]
+omap æ ]
+xmap æ ]
+
+nmap å `
+
+nnoremap <esc><esc> :noh<CR>
