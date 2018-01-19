@@ -69,7 +69,7 @@ set incsearch
 " endif
 
 set background=light
-colorscheme PaperColor
+silent! colorscheme PaperColor
 let g:airline_theme='papercolor'
 
 let python_highlight_all=1
