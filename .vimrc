@@ -22,9 +22,9 @@ Plugin 'tpope/vim-unimpaired'
 " Plugin 'nvie/vim-flake8'
 Plugin 'vim-scripts/indentpython.vim'
 Plugin 'godlygeek/tabular'
-Plugin 'vim-airline/vim-airline'
-Plugin 'vim-airline/vim-airline-themes'
-Plugin 'tmhedberg/SimpylFold'
+" Plugin 'vim-airline/vim-airline'
+" Plugin 'vim-airline/vim-airline-themes'
+" Plugin 'tmhedberg/SimpylFold'
 " Plugin 'Valloric/YouCompleteMe'
 " Plugin 'vim-syntastic/syntastic'
 " Plugin 'nvie/vim-flake8'
@@ -35,6 +35,8 @@ Plugin 'NLKNguyen/papercolor-theme'
 " Plugin 'kana/vim-textobj-lastpat' " Didn't work
 Plugin 'sigvaldm/vim-ipython'
 Plugin 'nelstrom/vim-visual-star-search'
+" Plugin 'vim-latex/vim-latex'
+" Plugin 'xuhdev/vim-latex-live-preview'
 
 call vundle#end()
 filetype plugin indent on
@@ -45,19 +47,21 @@ filetype plugin indent on
 
 " For vim-airline, install powerline-fonts from pacman and use it with this
 " line
-" let g:airline_powerline_fonts = 1
+" let g:airline_powerline_fonts = 0
 
 " command Python python3
 command! -nargs=+ Python python3 <args>
 
-set foldmethod=indent
-set foldlevel=99
+" set foldmethod=indent
+" set foldlevel=0
 
-let g:airline#extensions#tabline#enabled = 1
+" let g:airline#extensions#tabline#enabled = 1
 
 set hlsearch
 set incsearch
 
+" autocmd Filetype tex setl updatetime=1
+" let g:livepreview_previewer = 'evince'
 
 " au BufRead,BufNewFile *.py,*.pyw,*.c,*.h match ExtraWhitespace /\s\+$/
 " set encoding=utf-8
