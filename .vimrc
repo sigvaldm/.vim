@@ -32,11 +32,13 @@ Plugin 'godlygeek/tabular'
 " Plugin 'altercation/vim-colors-solarized'
 Plugin 'kien/ctrlp.vim'
 Plugin 'NLKNguyen/papercolor-theme'
-" Plugin 'kana/vim-textobj-lastpat' " Didn't work
 Plugin 'sigvaldm/vim-ipython'
 Plugin 'nelstrom/vim-visual-star-search'
 " Plugin 'vim-latex/vim-latex'
 " Plugin 'xuhdev/vim-latex-live-preview'
+" Plugin 'kana/vim-textobj-user'
+" Plugin 'kana/vim-textobj-lastpat' " Didn't work
+Plugin 'Valloric/YouCompleteMe'
 
 call vundle#end()
 filetype plugin indent on
@@ -102,6 +104,7 @@ set wildmode=longest,list
 
 " Allows hiding a changed buffer. Convenient if using argdo.
 set hidden
+set ignorecase
 
 " Enables mouse for resizing windows and visual selection amongst others
 " One problem is that Ctrl+Shift+C/V cannot be used to copy-past to/from
@@ -131,7 +134,7 @@ nnoremap <C-k> <C-W><C-k>
 nnoremap <C-l> <C-W><C-l>
 
 " Swap windows
-nnoremap <C-r> <C-W><C-r>
+" nnoremap <C-r> <C-W><C-r>
 
 " nnoremap <f5> :!ctags -R<CR>
 
@@ -141,6 +144,7 @@ nnoremap <C-r> <C-W><C-r>
 nnoremap <Leader>t :Tab /
 vnoremap <Leader>t :Tab /
 
+nnoremap <Leader>m :w \| make<CR>
 nnoremap <space> za
 
 " Mappings for vim-unimpaired, etc.
