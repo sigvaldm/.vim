@@ -16,6 +16,7 @@ Plugin 'tpope/vim-fugitive'
 Plugin 'tpope/vim-commentary'
 Plugin 'tpope/vim-surround'
 Plugin 'tpope/vim-unimpaired'
+Plugin 'tpope/vim-vinegar'
 " Plugin 'scrooloose/nerdtree'
 " Plugin 'scrooloose/nerdtree-tabs'
 " Plugin 'scrooloose/nerdtree-git-plugin'
@@ -50,6 +51,8 @@ filetype plugin indent on
 " For vim-airline, install powerline-fonts from pacman and use it with this
 " line
 " let g:airline_powerline_fonts = 0
+
+let g:netrw_list_hide = '\(^\|\s\s\)\zs\.\S\+'
 
 " command Python python3
 command! -nargs=+ Python python3 <args>
@@ -91,6 +94,11 @@ set number
 " Tab behavior
 set tabstop=4
 set shiftwidth=4
+
+set textwidth=80
+set colorcolumn=+1
+
+set clipboard=unnamed
 
 " Automatically update changed files
 set autoread
@@ -159,3 +167,5 @@ xmap æ ]
 nmap å `
 
 nnoremap <esc><esc> :noh<CR>
+
+inoremap <F2> <esc>:r !date +"\%Y-\%m-\%d \%A (W\%W)"<CR>A
