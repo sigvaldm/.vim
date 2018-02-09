@@ -39,7 +39,9 @@ Plugin 'nelstrom/vim-visual-star-search'
 " Plugin 'xuhdev/vim-latex-live-preview'
 " Plugin 'kana/vim-textobj-user'
 " Plugin 'kana/vim-textobj-lastpat' " Didn't work
-Plugin 'Valloric/YouCompleteMe'
+if v:version > 705
+	Plugin 'Valloric/YouCompleteMe'
+endif
 
 call vundle#end()
 filetype plugin indent on
