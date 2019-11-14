@@ -29,8 +29,6 @@ Plugin 'godlygeek/tabular'
 " Plugin 'Valloric/YouCompleteMe'
 " Plugin 'vim-syntastic/syntastic'
 " Plugin 'nvie/vim-flake8'
-" Plugin 'jnurmine/Zenburn'
-" Plugin 'altercation/vim-colors-solarized'
 Plugin 'kien/ctrlp.vim'
 Plugin 'NLKNguyen/papercolor-theme'
 Plugin 'sigvaldm/vim-ipython'
@@ -39,6 +37,7 @@ Plugin 'nelstrom/vim-visual-star-search'
 " Plugin 'xuhdev/vim-latex-live-preview'
 " Plugin 'kana/vim-textobj-user'
 " Plugin 'kana/vim-textobj-lastpat' " Didn't work
+Plugin 'yegappan/mru'
 if v:version > 705
 	Plugin 'Valloric/YouCompleteMe'
 endif
@@ -50,38 +49,19 @@ filetype plugin indent on
 " MISCELLANEOUS SETTINGS
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
-" For vim-airline, install powerline-fonts from pacman and use it with this
-" line
-" let g:airline_powerline_fonts = 0
-
 let g:netrw_list_hide = '\(^\|\s\s\)\zs\.\S\+'
-
-" command Python python3
-command! -nargs=+ Python python3 <args>
-
-" set foldmethod=indent
-" set foldlevel=0
-
-" let g:airline#extensions#tabline#enabled = 1
 
 set hlsearch
 set incsearch
 
-" autocmd Filetype tex setl updatetime=1
-" let g:livepreview_previewer = 'evince'
-
-" au BufRead,BufNewFile *.py,*.pyw,*.c,*.h match ExtraWhitespace /\s\+$/
-" set encoding=utf-8
-" if has('gui_running')
-"   set background=dark
-"   colorscheme solarized
-" else
-"   colorscheme zenburn
-" endif
+" Correct cursor in Cygwin
+let &t_ti.="\e[1 q"
+let &t_SI.="\e[5 q"
+let &t_EI.="\e[1 q"
+let &t_te.="\e[0 q"
 
 set background=light
 silent! colorscheme PaperColor
-let g:airline_theme='papercolor'
 
 let python_highlight_all=1
 
@@ -93,17 +73,22 @@ set splitbelow
 syntax on
 set number
 
-" Tab behavior
+" Default tab behavior
 set tabstop=4
 set shiftwidth=4
+set expandtab
 
+" Text width behaviour
 set textwidth=80
 set colorcolumn=+1
+set nowrap
 
+" Use system clipboard
 set clipboard=unnamed
 
 " Automatically update changed files
 set autoread
+au CursorHold * checktime
 
 " Bash-like autocompletion for Ex-mode
 set wildmode=longest,list
@@ -143,9 +128,6 @@ nnoremap <C-j> <C-W><C-j>
 nnoremap <C-k> <C-W><C-k>
 nnoremap <C-l> <C-W><C-l>
 
-" Swap windows
-" nnoremap <C-r> <C-W><C-r>
-
 " nnoremap <f5> :!ctags -R<CR>
 
 " Find letters forward with ø
@@ -153,6 +135,8 @@ nnoremap <C-l> <C-W><C-l>
 
 nnoremap <Leader>t :Tab /
 vnoremap <Leader>t :Tab /
+
+nnoremap <Leader>r :MRU<CR>
 
 nnoremap <Leader>m :w \| make<CR>
 nnoremap <space> za
