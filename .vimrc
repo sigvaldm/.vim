@@ -83,6 +83,9 @@ set textwidth=80
 set colorcolumn=+1
 set nowrap
 
+" Prevents automatic text-break when hitting text-width
+set formatoptions-=t
+
 " Use system clipboard
 set clipboard=unnamed
 
