@@ -409,6 +409,7 @@ iab impure IMPURE
 iab in IN
 iab include INCLUDE
 iab index INDEX
+iab inout INOUT
 iab input_unit INPUT_UNIT
 iab inquire INQUIRE
 iab int INT
