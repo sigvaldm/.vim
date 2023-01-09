@@ -1,0 +1,8 @@
+name: vim
+channels:
+    - defaults
+dependencies:
+    - pip
+    - pip:
+        - pynvim
+        - jedi

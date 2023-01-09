@@ -31,16 +31,24 @@ Plugin 'godlygeek/tabular'
 " Plugin 'nvie/vim-flake8'
 Plugin 'kien/ctrlp.vim'
 Plugin 'NLKNguyen/papercolor-theme'
-Plugin 'sigvaldm/vim-ipython'
+" Plugin 'sigvaldm/vim-ipython'
 Plugin 'nelstrom/vim-visual-star-search'
 " Plugin 'vim-latex/vim-latex'
 " Plugin 'xuhdev/vim-latex-live-preview'
 " Plugin 'kana/vim-textobj-user'
 " Plugin 'kana/vim-textobj-lastpat' " Didn't work
 Plugin 'yegappan/mru'
-if v:version > 705
-	Plugin 'Valloric/YouCompleteMe'
-endif
+" Plugin 'puremourning/vimspector'
+Plugin 'psf/black'
+" Plugin 'dense-analysis/ale'
+" Plugin 'davidhalter/jedi-vim'
+" Plugin 'Shougo/ddc.vim'
+Plugin 'Shougo/deoplete.nvim'
+Plugin 'deoplete-plugins/deoplete-jedi'
+Plugin 'ervandew/supertab'
+" if v:version > 812
+" 	Plugin 'Valloric/YouCompleteMe'
+" endif
 
 call vundle#end()
 filetype plugin indent on
@@ -48,6 +56,12 @@ filetype plugin indent on
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " MISCELLANEOUS SETTINGS
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+let g:ale_completion_enabled = 1
+let g:deoplete#enable_at_startup = 1
+let g:python3_host_prog = '~/miniconda3/envs/vim/bin/python'
+" let g:python3_host_prog = '~/.vim/python'
+
 
 let g:netrw_list_hide = '\(^\|\s\s\)\zs\.\S\+'
 
