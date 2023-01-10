@@ -26,4 +26,5 @@ let g:python3_host_prog = '~/miniconda3/envs/vim/bin/python'
 
 #### jedi-vim
 
-- `K` Go to definition
+- `K` See docstring
+- `\d` Go to definition
