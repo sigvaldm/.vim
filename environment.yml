@@ -1,8 +1,11 @@
 name: vim
 channels:
     - defaults
+    # - anaconda
 dependencies:
+    - nodejs>=14.14 # For CoC.nvim
+    - jedi
     - pip
     - pip:
         - pynvim
-        - jedi
+    #     - jedi # For Python autocompleters relying on Jedi

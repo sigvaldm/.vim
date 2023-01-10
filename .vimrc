@@ -39,12 +39,25 @@ Plugin 'nelstrom/vim-visual-star-search'
 Plugin 'yegappan/mru'
 " Plugin 'puremourning/vimspector'
 Plugin 'psf/black'
+
+" Linter
+
 Plugin 'dense-analysis/ale'
-Plugin 'davidhalter/jedi-vim'
-Plugin 'Shougo/deoplete.nvim'
-Plugin 'deoplete-plugins/deoplete-jedi'
+
+" Deoplete approach to IntelliSense
+
+" Plugin 'Shougo/deoplete.nvim'
+" Plugin 'deoplete-plugins/deoplete-jedi'
+" Plugin 'ervandew/supertab'
+
 " Plugin 'Shougo/ddc.vim'
-Plugin 'ervandew/supertab'
+" Plugin 'davidhalter/jedi-vim'
+
+" Coc approach to IntelliSense
+
+Plugin 'neoclide/coc.nvim'
+" Plugin 'pappasam/coc-jedi'
+" Plugin 'fannheyward/coc-pyright'
 
 call vundle#end()
 filetype plugin indent on
@@ -56,6 +69,7 @@ filetype plugin indent on
 " let g:ale_completion_enabled = 1
 let g:deoplete#enable_at_startup = 1
 let g:jedi#completions_enabled = 0
+let g:coc_node_path = '~/miniconda3/envs/vim/bin/node'
 let g:python3_host_prog = '~/miniconda3/envs/vim/bin/python'
 " let g:python3_host_prog = '~/.vim/python'
 
