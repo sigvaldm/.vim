@@ -26,7 +26,6 @@ Plugin 'godlygeek/tabular'
 " Plugin 'vim-airline/vim-airline'
 " Plugin 'vim-airline/vim-airline-themes'
 " Plugin 'tmhedberg/SimpylFold'
-" Plugin 'Valloric/YouCompleteMe'
 " Plugin 'vim-syntastic/syntastic'
 " Plugin 'nvie/vim-flake8'
 Plugin 'kien/ctrlp.vim'
@@ -40,15 +39,12 @@ Plugin 'nelstrom/vim-visual-star-search'
 Plugin 'yegappan/mru'
 " Plugin 'puremourning/vimspector'
 Plugin 'psf/black'
-" Plugin 'dense-analysis/ale'
-" Plugin 'davidhalter/jedi-vim'
-" Plugin 'Shougo/ddc.vim'
+Plugin 'dense-analysis/ale'
+Plugin 'davidhalter/jedi-vim'
 Plugin 'Shougo/deoplete.nvim'
 Plugin 'deoplete-plugins/deoplete-jedi'
+" Plugin 'Shougo/ddc.vim'
 Plugin 'ervandew/supertab'
-" if v:version > 812
-" 	Plugin 'Valloric/YouCompleteMe'
-" endif
 
 call vundle#end()
 filetype plugin indent on
@@ -57,8 +53,9 @@ filetype plugin indent on
 " MISCELLANEOUS SETTINGS
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
-let g:ale_completion_enabled = 1
+" let g:ale_completion_enabled = 1
 let g:deoplete#enable_at_startup = 1
+let g:jedi#completions_enabled = 0
 let g:python3_host_prog = '~/miniconda3/envs/vim/bin/python'
 " let g:python3_host_prog = '~/.vim/python'
 

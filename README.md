@@ -19,3 +19,11 @@ Open `.vimrc` and update the path on the following line:
 ```
 let g:python3_host_prog = '~/miniconda3/envs/vim/bin/python'
 ```
+
+## Summary of functionality and customizations
+
+### IntelliSense
+
+#### jedi-vim
+
+- `K` Go to definition
