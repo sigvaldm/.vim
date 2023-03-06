@@ -9,7 +9,8 @@ git clone --recursive https://github.com/sigvaldm/.vim # recursive is important
 ln -s .vim/.vimrc .vimrc # For Vim
 ln -s ~/.vim/init.vim .config/nvim/init.vim # For NeoVim
 vim +PluginInstall +qa!
-vim +
+vim +CocInstall coc-pyright +qa!
+vim +VimspectorInstall +qa!
 ```
 Then,
 ```

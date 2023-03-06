@@ -1,0 +1,6 @@
+{
+    "pyright.disableDiagnostics": true,
+    "pyright.inlayHints.variableTypes": false,
+    "pyright.inlayHints.functionReturnTypes": false
+    // "suggest.noselect": true
+}

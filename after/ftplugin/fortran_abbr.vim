@@ -1,631 +1,631 @@
-" Auto-capitalize fortran keywords
-" Keywords found from syntax/fortran.vim (typically in /usr/share/vim/vim81)
+" " Auto-capitalize fortran keywords
+" " Keywords found from syntax/fortran.vim (typically in /usr/share/vim/vim81)
 
-iab __shfl __SHFL
-iab __shfl_down __SHFL_DOWN
-iab __shfl_up __SHFL_UP
-iab __shfl_xor __SHFL_XOR
-iab abs ABS
-iab abstract ABSTRACT
-iab access ACCESS
-iab achar ACHAR
-iab acos ACOS
-iab acosh ACOSH
-iab action ACTION
-iab adjustl ADJUSTL
-iab adjustr ADJUSTR
-iab advance ADVANCE
-iab aimag AIMAG
-iab aint AINT
-iab algama ALGAMA
-iab all ALL
-iab allocatable ALLOCATABLE
-iab allocate ALLOCATE
-iab allocated ALLOCATED
-iab allthreads ALLTHREADS
-iab alog ALOG
-iab alog10 ALOG10
-iab amax0 AMAX0
-iab amax1 AMAX1
-iab amin0 AMIN0
-iab amin1 AMIN1
-iab amod AMOD
-iab and AND
-iab anint ANINT
-iab any ANY
-iab anythread ANYTHREAD
-iab asin ASIN
-iab asinh ASINH
-iab assign ASSIGN
-iab assignment ASSIGNMENT
-iab associate ASSOCIATE
-iab associated ASSOCIATED
-iab asynchronous ASYNCHRONOUS
-iab atan ATAN
-iab atan2 ATAN2
-iab atanh ATANH
-iab atomic_define ATOMIC_DEFINE
-iab atomic_ref ATOMIC_REF
-iab atomicadd ATOMICADD
-iab atomicand ATOMICAND
-iab atomiccas ATOMICCAS
-iab atomicdec ATOMICDEC
-iab atomicexch ATOMICEXCH
-iab atomicinc ATOMICINC
-iab atomicmax ATOMICMAX
-iab atomicmin ATOMICMIN
-iab atomicor ATOMICOR
-iab atomicsub ATOMICSUB
-iab atomicxor ATOMICXOR
-iab attributes ATTRIBUTES
-iab backspace BACKSPACE
-iab ballot BALLOT
-iab bessel_j0 BESSEL_J0
-iab bessel_j1 BESSEL_J1
-iab bessel_jn BESSEL_JN
-iab bessel_y0 BESSEL_Y0
-iab bessel_y1 BESSEL_Y1
-iab bessel_yn BESSEL_YN
-iab bge BGE
-iab bgt BGT
-iab bind BIND
-iab bit_size BIT_SIZE
-iab blank BLANK
-iab ble BLE
-iab block BLOCK
-iab blt BLT
-iab btest BTEST
-iab c_alert C_ALERT
-iab c_associated C_ASSOCIATED
-iab c_backspace C_BACKSPACE
-iab c_bool C_BOOL
-iab c_carriage_return C_CARRIAGE_RETURN
-iab c_char C_CHAR
-iab c_devptr C_DEVPTR
-iab c_double C_DOUBLE
-iab c_double_complex C_DOUBLE_COMPLEX
-iab c_f_pointer C_F_POINTER
-iab c_f_procpointer C_F_PROCPOINTER
-iab c_float C_FLOAT
-iab c_float_complex C_FLOAT_COMPLEX
-iab c_form_feed C_FORM_FEED
-iab c_funloc C_FUNLOC
-iab c_funptr C_FUNPTR
-iab c_horizontal_tab C_HORIZONTAL_TAB
-iab c_int C_INT
-iab c_int16_t C_INT16_T
-iab c_int32_t C_INT32_T
-iab c_int64_t C_INT64_T
-iab c_int8_t C_INT8_T
-iab c_int_fast16_t C_INT_FAST16_T
-iab c_int_fast32_t C_INT_FAST32_T
-iab c_int_fast64_t C_INT_FAST64_T
-iab c_int_fast8_t C_INT_FAST8_T
-iab c_int_least16_t C_INT_LEAST16_T
-iab c_int_least32_t C_INT_LEAST32_T
-iab c_int_least64_t C_INT_LEAST64_T
-iab c_int_least8_t C_INT_LEAST8_T
-iab c_intmax_t C_INTMAX_T
-iab c_intptr_t C_INTPTR_T
-iab c_loc C_LOC
-iab c_long C_LONG
-iab c_long_double C_LONG_DOUBLE
-iab c_long_double_complex C_LONG_DOUBLE_COMPLEX
-iab c_long_long C_LONG_LONG
-iab c_new_line C_NEW_LINE
-iab c_null_char C_NULL_CHAR
-iab c_null_funptr C_NULL_FUNPTR
-iab c_null_ptr C_NULL_PTR
-iab c_ptr C_PTR
-iab c_short C_SHORT
-iab c_signed_char C_SIGNED_CHAR
-iab c_size_t C_SIZE_T
-iab c_vertical_tab C_VERTICAL_TAB
-iab cabs CABS
-iab call CALL
-iab case CASE
-iab ccos CCOS
-iab cdabs CDABS
-iab cdcos CDCOS
-iab cdexp CDEXP
-iab cdlog CDLOG
-iab cdsin CDSIN
-iab cdsqrt CDSQRT
-iab ceiling CEILING
-iab cexp CEXP
-iab char CHAR
-iab character CHARACTER
-iab character_storage_size CHARACTER_STORAGE_SIZE
-iab class CLASS
-iab clog CLOG
-iab close CLOSE
-iab cmplx CMPLX
-iab command_argument_count COMMAND_ARGUMENT_COUNT
-iab common COMMON
-iab complex COMPLEX
-iab concurrent CONCURRENT
-iab conjg CONJG
-iab constant CONSTANT
-iab contains CONTAINS
-iab contiguous CONTIGUOUS
-iab continue CONTINUE
-iab cos COS
-iab cosh COSH
-iab count COUNT
-iab cpu_time CPU_TIME
-iab cqabs CQABS
-iab cqcos CQCOS
-iab cqexp CQEXP
-iab cqlog CQLOG
-iab cqsin CQSIN
-iab cqsqrt CQSQRT
-iab cshift CSHIFT
-iab csin CSIN
-iab csqrt CSQRT
-iab cudaArrayPtr CUDAARRAYPTR
-iab cudaChannelFormatDesc CUDACHANNELFORMATDESC
-iab cudaChooseDevice CUDACHOOSEDEVICE
-iab cudaDeviceCanAccessPeer CUDADEVICECANACCESSPEER
-iab cudaDeviceDisablePeerAccess CUDADEVICEDISABLEPEERACCESS
-iab cudaDeviceEnablePeerAccess CUDADEVICEENABLEPEERACCESS
-iab cudaDeviceGetCacheConfig CUDADEVICEGETCACHECONFIG
-iab cudaDeviceGetLimit CUDADEVICEGETLIMIT
-iab cudaDeviceGetSharedMemConfig CUDADEVICEGETSHAREDMEMCONFIG
-iab cudaDeviceReset CUDADEVICERESET
-iab cudaDeviceSetCacheConfig CUDADEVICESETCACHECONFIG
-iab cudaDeviceSetLimit CUDADEVICESETLIMIT
-iab cudaDeviceSetSharedMemConfig CUDADEVICESETSHAREDMEMCONFIG
-iab cudaDeviceSynchronize CUDADEVICESYNCHRONIZE
-iab cudaDriverGetVersion CUDADRIVERGETVERSION
-iab cudaErrorInvalidValue CUDAERRORINVALIDVALUE
-iab cudaErrorNotReady CUDAERRORNOTREADY
-iab cudaEvent CUDAEVENT
-iab cudaEventBlockingSync CUDAEVENTBLOCKINGSYNC
-iab cudaEventCreate CUDAEVENTCREATE
-iab cudaEventCreateWithFlags CUDAEVENTCREATEWITHFLAGS
-iab cudaEventDefault CUDAEVENTDEFAULT
-iab cudaEventDestroy CUDAEVENTDESTROY
-iab cudaEventDisableTiming CUDAEVENTDISABLETIMING
-iab cudaEventElapsedTime CUDAEVENTELAPSEDTIME
-iab cudaEventQuery CUDAEVENTQUERY
-iab cudaEventRecord CUDAEVENTRECORD
-iab cudaEventSynchronize CUDAEVENTSYNCHRONIZE
-iab cudaExtent CUDAEXTENT
-iab cudaFree CUDAFREE
-iab cudaFreeArray CUDAFREEARRAY
-iab cudaFreeHost CUDAFREEHOST
-iab cudaFuncAttributes CUDAFUNCATTRIBUTES
-iab cudaFuncCachePreferL1 CUDAFUNCCACHEPREFERL1
-iab cudaFuncCachePreferNone CUDAFUNCCACHEPREFERNONE
-iab cudaFuncCachePreferShared CUDAFUNCCACHEPREFERSHARED
-iab cudaFuncGetAttributes CUDAFUNCGETATTRIBUTES
-iab cudaFuncSetCacheConfig CUDAFUNCSETCACHECONFIG
-iab cudaFuncSetSharedMemConfig CUDAFUNCSETSHAREDMEMCONFIG
-iab cudaGetDevice CUDAGETDEVICE
-iab cudaGetDeviceCount CUDAGETDEVICECOUNT
-iab cudaGetDeviceProperties CUDAGETDEVICEPROPERTIES
-iab cudaGetErrorString CUDAGETERRORSTRING
-iab cudaGetLastError CUDAGETLASTERROR
-iab cudaGetSymbolAddress CUDAGETSYMBOLADDRESS
-iab cudaGetSymbolSize CUDAGETSYMBOLSIZE
-iab cudaHostAlloc CUDAHOSTALLOC
-iab cudaHostGetDevicePointer CUDAHOSTGETDEVICEPOINTER
-iab cudaHostGetFlags CUDAHOSTGETFLAGS
-iab cudaHostRegister CUDAHOSTREGISTER
-iab cudaHostUnregister CUDAHOSTUNREGISTER
-iab cudaLimitMallocHeapSize CUDALIMITMALLOCHEAPSIZE
-iab cudaLimitPrintfSize CUDALIMITPRINTFSIZE
-iab cudaLimitStackSize CUDALIMITSTACKSIZE
-iab cudaMalloc CUDAMALLOC
-iab cudaMalloc3D CUDAMALLOC3D
-iab cudaMalloc3DArray CUDAMALLOC3DARRAY
-iab cudaMallocArray CUDAMALLOCARRAY
-iab cudaMallocHost CUDAMALLOCHOST
-iab cudaMallocPitch CUDAMALLOCPITCH
-iab cudaMemGetInfo CUDAMEMGETINFO
-iab cudaMemcpy CUDAMEMCPY
-iab cudaMemcpy2D CUDAMEMCPY2D
-iab cudaMemcpy2DArrayToArray CUDAMEMCPY2DARRAYTOARRAY
-iab cudaMemcpy2DAsync CUDAMEMCPY2DASYNC
-iab cudaMemcpy2DFromArray CUDAMEMCPY2DFROMARRAY
-iab cudaMemcpy2DToArray CUDAMEMCPY2DTOARRAY
-iab cudaMemcpy3D CUDAMEMCPY3D
-iab cudaMemcpy3DAsync CUDAMEMCPY3DASYNC
-iab cudaMemcpy3DParms CUDAMEMCPY3DPARMS
-iab cudaMemcpyArraytoArray CUDAMEMCPYARRAYTOARRAY
-iab cudaMemcpyAsync CUDAMEMCPYASYNC
-iab cudaMemcpyDeviceToDevice CUDAMEMCPYDEVICETODEVICE
-iab cudaMemcpyDeviceToHost CUDAMEMCPYDEVICETOHOST
-iab cudaMemcpyFromArray CUDAMEMCPYFROMARRAY
-iab cudaMemcpyFromSymbol CUDAMEMCPYFROMSYMBOL
-iab cudaMemcpyFromSymbolAsync CUDAMEMCPYFROMSYMBOLASYNC
-iab cudaMemcpyHostToDevice CUDAMEMCPYHOSTTODEVICE
-iab cudaMemcpyPeer CUDAMEMCPYPEER
-iab cudaMemcpyPeerAsync CUDAMEMCPYPEERASYNC
-iab cudaMemcpyToArray CUDAMEMCPYTOARRAY
-iab cudaMemcpyToSymbol CUDAMEMCPYTOSYMBOL
-iab cudaMemcpyToSymbolAsync CUDAMEMCPYTOSYMBOLASYNC
-iab cudaMemset CUDAMEMSET
-iab cudaMemset2D CUDAMEMSET2D
-iab cudaMemset3D CUDAMEMSET3D
-iab cudaPeekAtLastError CUDAPEEKATLASTERROR
-iab cudaPitchedPtr CUDAPITCHEDPTR
-iab cudaPointerGetAttributes CUDAPOINTERGETATTRIBUTES
-iab cudaRuntimeGetVersion CUDARUNTIMEGETVERSION
-iab cudaSetDevice CUDASETDEVICE
-iab cudaSetDeviceFlags CUDASETDEVICEFLAGS
-iab cudaSetDoubleForDevice CUDASETDOUBLEFORDEVICE
-iab cudaSetDoubleForHost CUDASETDOUBLEFORHOST
-iab cudaSetValidDevices CUDASETVALIDDEVICES
-iab cudaSharedMemBankSizeDefault CUDASHAREDMEMBANKSIZEDEFAULT
-iab cudaSharedMemBankSizeEightByte CUDASHAREDMEMBANKSIZEEIGHTBYTE
-iab cudaSharedMemBankSizeFourByte CUDASHAREDMEMBANKSIZEFOURBYTE
-iab cudaStreamCreate CUDASTREAMCREATE
-iab cudaStreamDestroy CUDASTREAMDESTROY
-iab cudaStreamQuery CUDASTREAMQUERY
-iab cudaStreamSynchronize CUDASTREAMSYNCHRONIZE
-iab cudaStreamWaitEvent CUDASTREAMWAITEVENT
-iab cudaSuccess CUDASUCCESS
-iab cudaSymbol CUDASYMBOL
-iab cudaThreadExit CUDATHREADEXIT
-iab cudaThreadSynchronize CUDATHREADSYNCHRONIZE
-iab cuda_count_kind CUDA_COUNT_KIND
-iab cuda_stream_kind CUDA_STREAM_KIND
-iab cudadeviceprop CUDADEVICEPROP
-iab cycle CYCLE
-iab dabs DABS
-iab dacos DACOS
-iab dasin DASIN
-iab data DATA
-iab datan DATAN
-iab datan2 DATAN2
-iab date_and_time DATE_AND_TIME
-iab dble DBLE
-iab dcmplx DCMPLX
-iab dconjg DCONJG
-iab dcos DCOS
-iab dcosh DCOSH
-iab ddim DDIM
-iab deallocate DEALLOCATE
-iab decimal DECIMAL
-iab default DEFAULT
-iab deferred DEFERRED
-iab define DEFINE
-iab delim DELIM
-iab derf DERF
-iab derfc DERFC
-iab device DEVICE
-iab dexp DEXP
-iab dfloat DFLOAT
-iab dgamma DGAMMA
-iab digits DIGITS
-iab dim DIM
-iab dim1 DIM1
-iab dim2 DIM2
-iab dim3 DIM3
-iab dim4 DIM4
-iab dimag DIMAG
-iab dimension DIMENSION
-iab dint DINT
-iab direct DIRECT
-iab dlgama DLGAMA
-iab dlog DLOG
-iab dlog10 DLOG10
-iab dmax1 DMAX1
-iab dmin1 DMIN1
-iab dmod DMOD
-iab dnint DNINT
-iab do DO
-iab dot_product DOT_PRODUCT
-iab double complex double COMPLEX
-iab double precision double PRECISION
-iab dprod DPROD
-iab dshiftl DSHIFTL
-iab dshiftr DSHIFTR
-iab dsign DSIGN
-iab dsin DSIN
-iab dsinh DSINH
-iab dsqrt DSQRT
-iab dtan DTAN
-iab dtanh DTANH
-iab elemental ELEMENTAL
-iab elif ELIF
-iab else ELSE
-iab elsewhere ELSEWHERE
-iab end END
-iab endfile ENDFILE
-iab endif ENDIF
-iab entry ENTRY
-iab enum ENUM
-iab enumerator ENUMERATOR
-iab eor EOR
-iab eoshift EOSHIFT
-iab epsilon EPSILON
-iab equivalence EQUIVALENCE
-iab eqv EQV
-iab erf ERF
-iab erfc ERFC
-iab erfc_scaled ERFC_SCALED
-iab error_unit ERROR_UNIT
-iab execute_command_line EXECUTE_COMMAND_LINE
-iab exist EXIST
-iab exit EXIT
-iab exp EXP
-iab exponent EXPONENT
-iab extends EXTENDS
-iab extends_type_of EXTENDS_TYPE_OF
-iab external EXTERNAL
-iab false FALSE
-iab file FILE
-iab file_storage_size FILE_STORAGE_SIZE
-iab final FINAL
-iab findloc FINDLOC
-iab float FLOAT
-iab floor FLOOR
-iab flush FLUSH
-iab fmt FMT
-iab forall FORALL
-iab form FORM
-iab format FORMAT
-iab formatted FORMATTED
-iab fraction FRACTION
-iab function FUNCTION
-iab gamma GAMMA
-iab generic GENERIC
-iab get_command GET_COMMAND
-iab get_command_argument GET_COMMAND_ARGUMENT
-iab get_environment_variable GET_ENVIRONMENT_VARIABLE
-iab global GLOBAL
-iab go to go TO
-iab gpu_time GPU_TIME
-iab host HOST
-iab huge HUGE
-iab hypot HYPOT
-iab iabs IABS
-iab iachar IACHAR
-iab iall IALL
-iab iand IAND
-iab iany IANY
-iab ibclr IBCLR
-iab ibits IBITS
-iab ibset IBSET
-iab ichar ICHAR
-iab idim IDIM
-iab idint IDINT
-iab idnint IDNINT
-iab ieee_arithmetic IEEE_ARITHMETIC
-iab ieee_get_underflow_mode IEEE_GET_UNDERFLOW_MODE
-iab ieee_set_underflow_mode IEEE_SET_UNDERFLOW_MODE
-iab ieee_support_underflow_control IEEE_SUPPORT_UNDERFLOW_CONTROL
-iab ieor IEOR
-iab if IF
-iab ifdef IFDEF
-iab ifix IFIX
-iab ifndef IFNDEF
-iab image_index IMAGE_INDEX
-iab implicit IMPLICIT
-iab import IMPORT
-iab impure IMPURE
-iab in IN
-iab include INCLUDE
-iab index INDEX
-iab inout INOUT
-iab input_unit INPUT_UNIT
-iab inquire INQUIRE
-iab int INT
-iab integer INTEGER
-iab intent INTENT
-iab interface INTERFACE
-iab intrinsic INTRINSIC
-iab iomsg IOMSG
-iab ior IOR
-iab iostat IOSTAT
-iab iostat_end IOSTAT_END
-iab iostat_eor IOSTAT_EOR
-iab iparity IPARITY
-iab iqint IQINT
-iab is_iostat_end IS_IOSTAT_END
-iab is_iostat_eor IS_IOSTAT_EOR
-iab ishft ISHFT
-iab ishftc ISHFTC
-iab isign ISIGN
-iab iso_c_binding ISO_C_BINDING
-iab iso_fortran_env ISO_FORTRAN_ENV
-iab kind KIND
-iab lbound LBOUND
-iab lcobound LCOBOUND
-iab leadz LEADZ
-iab len LEN
-iab len_trim LEN_TRIM
-iab lge LGE
-iab lgt LGT
-iab lle LLE
-iab llt LLT
-iab log LOG
-iab log10 LOG10
-iab log_gamma LOG_GAMMA
-iab logical LOGICAL
-iab maskl MASKL
-iab maskr MASKR
-iab matmul MATMUL
-iab max MAX
-iab max0 MAX0
-iab max1 MAX1
-iab maxexponent MAXEXPONENT
-iab maxloc MAXLOC
-iab maxval MAXVAL
-iab merge MERGE
-iab merge_bits MERGE_BITS
-iab min MIN
-iab min0 MIN0
-iab min1 MIN1
-iab minexponent MINEXPONENT
-iab minloc MINLOC
-iab minval MINVAL
-iab mod MOD
-iab module MODULE
-iab modulo MODULO
-iab move_alloc MOVE_ALLOC
-iab mvbits MVBITS
-iab name NAME
-iab named NAMED
-iab namelist NAMELIST
-iab nearest NEAREST
-iab new_line NEW_LINE
-iab newunit NEWUNIT
-iab nextrec NEXTREC
-iab nint NINT
-iab nml NML
-iab non_intrinsic NON_INTRINSIC
-iab non_overridable NON_OVERRIDABLE
-iab none NONE
-iab nopass NOPASS
-iab norm2 NORM2
-iab not NOT
-iab null NULL
-iab nullify NULLIFY
-iab num_images NUM_IMAGES
-iab number NUMBER
-iab numeric_storage_size NUMERIC_STORAGE_SIZE
-iab omp OMP
-iab only ONLY
-iab open OPEN
-iab opened OPENED
-iab operator OPERATOR
-iab optional OPTIONAL
-iab or OR
-iab out OUT
-iab output_unit OUTPUT_UNIT
-iab pack PACK
-iab pad PAD
-iab parameter PARAMETER
-iab parity PARITY
-iab pass PASS
-iab pause PAUSE
-iab pinned PINNED
-iab pointer POINTER
-iab popcnt POPCNT
-iab poppar POPPAR
-iab position POSITION
-iab precision PRECISION
-iab present PRESENT
-iab print PRINT
-iab private PRIVATE
-iab procedure PROCEDURE
-iab product PRODUCT
-iab program PROGRAM
-iab protected PROTECTED
-iab public PUBLIC
-iab pure PURE
-iab qabs QABS
-iab qacos QACOS
-iab qasin QASIN
-iab qatan QATAN
-iab qatan2 QATAN2
-iab qcmplx QCMPLX
-iab qconjg QCONJG
-iab qcos QCOS
-iab qcosh QCOSH
-iab qdim QDIM
-iab qerf QERF
-iab qerfc QERFC
-iab qexp QEXP
-iab qgamma QGAMMA
-iab qimag QIMAG
-iab qlgama QLGAMA
-iab qlog QLOG
-iab qlog10 QLOG10
-iab qmax1 QMAX1
-iab qmin1 QMIN1
-iab qmod QMOD
-iab qnint QNINT
-iab qsign QSIGN
-iab qsin QSIN
-iab qsinh QSINH
-iab qsqrt QSQRT
-iab qtan QTAN
-iab qtanh QTANH
-iab radix RADIX
-iab random_number RANDOM_NUMBER
-iab random_seed RANDOM_SEED
-iab range RANGE
-iab read READ
-iab readwrite READWRITE
-iab real REAL
-iab rec REC
-iab recl RECL
-iab recursive RECURSIVE
-iab repeat REPEAT
-iab reshape RESHAPE
-iab result RESULT
-iab return RETURN
-iab rewind REWIND
-iab round ROUND
-iab rrspacing RRSPACING
-iab same_type_as SAME_TYPE_AS
-iab save SAVE
-iab scale SCALE
-iab scan SCAN
-iab select SELECT
-iab selected_char_kind SELECTED_CHAR_KIND
-iab selected_int_kind SELECTED_INT_KIND
-iab selected_real_kind SELECTED_REAL_KIND
-iab sequence SEQUENCE
-iab sequential SEQUENTIAL
-iab set_exponent SET_EXPONENT
-iab shape SHAPE
-iab shared SHARED
-iab shifta SHIFTA
-iab shiftl SHIFTL
-iab shiftr SHIFTR
-iab sign SIGN
-iab sin SIN
-iab sinh SINH
-iab size SIZE
-iab sizeof SIZEOF
-iab sngl SNGL
-iab spacing SPACING
-iab spread SPREAD
-iab sqrt SQRT
-iab status STATUS
-iab stop STOP
-iab storage_size STORAGE_SIZE
-iab submodule SUBMODULE
-iab subroutine SUBROUTINE
-iab sum SUM
-iab syncthreads SYNCTHREADS
-iab syncthreads_and SYNCTHREADS_AND
-iab syncthreads_count SYNCTHREADS_COUNT
-iab syncthreads_or SYNCTHREADS_OR
-iab system_clock SYSTEM_CLOCK
-iab tan TAN
-iab tanh TANH
-iab target TARGET
-iab texture TEXTURE
-iab then THEN
-iab this_image THIS_IMAGE
-iab threadfence THREADFENCE
-iab threadfence_block THREADFENCE_BLOCK
-iab threadfence_system THREADFENCE_SYSTEM
-iab tiny TINY
-iab trailz TRAILZ
-iab transfer TRANSFER
-iab transpose TRANSPOSE
-iab trim TRIM
-iab true TRUE
-iab type TYPE
-iab ubound UBOUND
-iab ucobound UCOBOUND
-iab undef UNDEF
-iab unformatted UNFORMATTED
-iab unit UNIT
-iab unpack UNPACK
-iab use USE
-iab value VALUE
-iab verify VERIFY
-iab volatile VOLATILE
-iab wait WAIT
-iab warpsize WARPSIZE
-iab where WHERE
-iab while WHILE
-iab write WRITE
+" iab __shfl __SHFL
+" iab __shfl_down __SHFL_DOWN
+" iab __shfl_up __SHFL_UP
+" iab __shfl_xor __SHFL_XOR
+" iab abs ABS
+" iab abstract ABSTRACT
+" iab access ACCESS
+" iab achar ACHAR
+" iab acos ACOS
+" iab acosh ACOSH
+" iab action ACTION
+" iab adjustl ADJUSTL
+" iab adjustr ADJUSTR
+" iab advance ADVANCE
+" iab aimag AIMAG
+" iab aint AINT
+" iab algama ALGAMA
+" iab all ALL
+" iab allocatable ALLOCATABLE
+" iab allocate ALLOCATE
+" iab allocated ALLOCATED
+" iab allthreads ALLTHREADS
+" iab alog ALOG
+" iab alog10 ALOG10
+" iab amax0 AMAX0
+" iab amax1 AMAX1
+" iab amin0 AMIN0
+" iab amin1 AMIN1
+" iab amod AMOD
+" iab and AND
+" iab anint ANINT
+" iab any ANY
+" iab anythread ANYTHREAD
+" iab asin ASIN
+" iab asinh ASINH
+" iab assign ASSIGN
+" iab assignment ASSIGNMENT
+" iab associate ASSOCIATE
+" iab associated ASSOCIATED
+" iab asynchronous ASYNCHRONOUS
+" iab atan ATAN
+" iab atan2 ATAN2
+" iab atanh ATANH
+" iab atomic_define ATOMIC_DEFINE
+" iab atomic_ref ATOMIC_REF
+" iab atomicadd ATOMICADD
+" iab atomicand ATOMICAND
+" iab atomiccas ATOMICCAS
+" iab atomicdec ATOMICDEC
+" iab atomicexch ATOMICEXCH
+" iab atomicinc ATOMICINC
+" iab atomicmax ATOMICMAX
+" iab atomicmin ATOMICMIN
+" iab atomicor ATOMICOR
+" iab atomicsub ATOMICSUB
+" iab atomicxor ATOMICXOR
+" iab attributes ATTRIBUTES
+" iab backspace BACKSPACE
+" iab ballot BALLOT
+" iab bessel_j0 BESSEL_J0
+" iab bessel_j1 BESSEL_J1
+" iab bessel_jn BESSEL_JN
+" iab bessel_y0 BESSEL_Y0
+" iab bessel_y1 BESSEL_Y1
+" iab bessel_yn BESSEL_YN
+" iab bge BGE
+" iab bgt BGT
+" iab bind BIND
+" iab bit_size BIT_SIZE
+" iab blank BLANK
+" iab ble BLE
+" iab block BLOCK
+" iab blt BLT
+" iab btest BTEST
+" iab c_alert C_ALERT
+" iab c_associated C_ASSOCIATED
+" iab c_backspace C_BACKSPACE
+" iab c_bool C_BOOL
+" iab c_carriage_return C_CARRIAGE_RETURN
+" iab c_char C_CHAR
+" iab c_devptr C_DEVPTR
+" iab c_double C_DOUBLE
+" iab c_double_complex C_DOUBLE_COMPLEX
+" iab c_f_pointer C_F_POINTER
+" iab c_f_procpointer C_F_PROCPOINTER
+" iab c_float C_FLOAT
+" iab c_float_complex C_FLOAT_COMPLEX
+" iab c_form_feed C_FORM_FEED
+" iab c_funloc C_FUNLOC
+" iab c_funptr C_FUNPTR
+" iab c_horizontal_tab C_HORIZONTAL_TAB
+" iab c_int C_INT
+" iab c_int16_t C_INT16_T
+" iab c_int32_t C_INT32_T
+" iab c_int64_t C_INT64_T
+" iab c_int8_t C_INT8_T
+" iab c_int_fast16_t C_INT_FAST16_T
+" iab c_int_fast32_t C_INT_FAST32_T
+" iab c_int_fast64_t C_INT_FAST64_T
+" iab c_int_fast8_t C_INT_FAST8_T
+" iab c_int_least16_t C_INT_LEAST16_T
+" iab c_int_least32_t C_INT_LEAST32_T
+" iab c_int_least64_t C_INT_LEAST64_T
+" iab c_int_least8_t C_INT_LEAST8_T
+" iab c_intmax_t C_INTMAX_T
+" iab c_intptr_t C_INTPTR_T
+" iab c_loc C_LOC
+" iab c_long C_LONG
+" iab c_long_double C_LONG_DOUBLE
+" iab c_long_double_complex C_LONG_DOUBLE_COMPLEX
+" iab c_long_long C_LONG_LONG
+" iab c_new_line C_NEW_LINE
+" iab c_null_char C_NULL_CHAR
+" iab c_null_funptr C_NULL_FUNPTR
+" iab c_null_ptr C_NULL_PTR
+" iab c_ptr C_PTR
+" iab c_short C_SHORT
+" iab c_signed_char C_SIGNED_CHAR
+" iab c_size_t C_SIZE_T
+" iab c_vertical_tab C_VERTICAL_TAB
+" iab cabs CABS
+" iab call CALL
+" iab case CASE
+" iab ccos CCOS
+" iab cdabs CDABS
+" iab cdcos CDCOS
+" iab cdexp CDEXP
+" iab cdlog CDLOG
+" iab cdsin CDSIN
+" iab cdsqrt CDSQRT
+" iab ceiling CEILING
+" iab cexp CEXP
+" iab char CHAR
+" iab character CHARACTER
+" iab character_storage_size CHARACTER_STORAGE_SIZE
+" iab class CLASS
+" iab clog CLOG
+" iab close CLOSE
+" iab cmplx CMPLX
+" iab command_argument_count COMMAND_ARGUMENT_COUNT
+" iab common COMMON
+" iab complex COMPLEX
+" iab concurrent CONCURRENT
+" iab conjg CONJG
+" iab constant CONSTANT
+" iab contains CONTAINS
+" iab contiguous CONTIGUOUS
+" iab continue CONTINUE
+" iab cos COS
+" iab cosh COSH
+" iab count COUNT
+" iab cpu_time CPU_TIME
+" iab cqabs CQABS
+" iab cqcos CQCOS
+" iab cqexp CQEXP
+" iab cqlog CQLOG
+" iab cqsin CQSIN
+" iab cqsqrt CQSQRT
+" iab cshift CSHIFT
+" iab csin CSIN
+" iab csqrt CSQRT
+" iab cudaArrayPtr CUDAARRAYPTR
+" iab cudaChannelFormatDesc CUDACHANNELFORMATDESC
+" iab cudaChooseDevice CUDACHOOSEDEVICE
+" iab cudaDeviceCanAccessPeer CUDADEVICECANACCESSPEER
+" iab cudaDeviceDisablePeerAccess CUDADEVICEDISABLEPEERACCESS
+" iab cudaDeviceEnablePeerAccess CUDADEVICEENABLEPEERACCESS
+" iab cudaDeviceGetCacheConfig CUDADEVICEGETCACHECONFIG
+" iab cudaDeviceGetLimit CUDADEVICEGETLIMIT
+" iab cudaDeviceGetSharedMemConfig CUDADEVICEGETSHAREDMEMCONFIG
+" iab cudaDeviceReset CUDADEVICERESET
+" iab cudaDeviceSetCacheConfig CUDADEVICESETCACHECONFIG
+" iab cudaDeviceSetLimit CUDADEVICESETLIMIT
+" iab cudaDeviceSetSharedMemConfig CUDADEVICESETSHAREDMEMCONFIG
+" iab cudaDeviceSynchronize CUDADEVICESYNCHRONIZE
+" iab cudaDriverGetVersion CUDADRIVERGETVERSION
+" iab cudaErrorInvalidValue CUDAERRORINVALIDVALUE
+" iab cudaErrorNotReady CUDAERRORNOTREADY
+" iab cudaEvent CUDAEVENT
+" iab cudaEventBlockingSync CUDAEVENTBLOCKINGSYNC
+" iab cudaEventCreate CUDAEVENTCREATE
+" iab cudaEventCreateWithFlags CUDAEVENTCREATEWITHFLAGS
+" iab cudaEventDefault CUDAEVENTDEFAULT
+" iab cudaEventDestroy CUDAEVENTDESTROY
+" iab cudaEventDisableTiming CUDAEVENTDISABLETIMING
+" iab cudaEventElapsedTime CUDAEVENTELAPSEDTIME
+" iab cudaEventQuery CUDAEVENTQUERY
+" iab cudaEventRecord CUDAEVENTRECORD
+" iab cudaEventSynchronize CUDAEVENTSYNCHRONIZE
+" iab cudaExtent CUDAEXTENT
+" iab cudaFree CUDAFREE
+" iab cudaFreeArray CUDAFREEARRAY
+" iab cudaFreeHost CUDAFREEHOST
+" iab cudaFuncAttributes CUDAFUNCATTRIBUTES
+" iab cudaFuncCachePreferL1 CUDAFUNCCACHEPREFERL1
+" iab cudaFuncCachePreferNone CUDAFUNCCACHEPREFERNONE
+" iab cudaFuncCachePreferShared CUDAFUNCCACHEPREFERSHARED
+" iab cudaFuncGetAttributes CUDAFUNCGETATTRIBUTES
+" iab cudaFuncSetCacheConfig CUDAFUNCSETCACHECONFIG
+" iab cudaFuncSetSharedMemConfig CUDAFUNCSETSHAREDMEMCONFIG
+" iab cudaGetDevice CUDAGETDEVICE
+" iab cudaGetDeviceCount CUDAGETDEVICECOUNT
+" iab cudaGetDeviceProperties CUDAGETDEVICEPROPERTIES
+" iab cudaGetErrorString CUDAGETERRORSTRING
+" iab cudaGetLastError CUDAGETLASTERROR
+" iab cudaGetSymbolAddress CUDAGETSYMBOLADDRESS
+" iab cudaGetSymbolSize CUDAGETSYMBOLSIZE
+" iab cudaHostAlloc CUDAHOSTALLOC
+" iab cudaHostGetDevicePointer CUDAHOSTGETDEVICEPOINTER
+" iab cudaHostGetFlags CUDAHOSTGETFLAGS
+" iab cudaHostRegister CUDAHOSTREGISTER
+" iab cudaHostUnregister CUDAHOSTUNREGISTER
+" iab cudaLimitMallocHeapSize CUDALIMITMALLOCHEAPSIZE
+" iab cudaLimitPrintfSize CUDALIMITPRINTFSIZE
+" iab cudaLimitStackSize CUDALIMITSTACKSIZE
+" iab cudaMalloc CUDAMALLOC
+" iab cudaMalloc3D CUDAMALLOC3D
+" iab cudaMalloc3DArray CUDAMALLOC3DARRAY
+" iab cudaMallocArray CUDAMALLOCARRAY
+" iab cudaMallocHost CUDAMALLOCHOST
+" iab cudaMallocPitch CUDAMALLOCPITCH
+" iab cudaMemGetInfo CUDAMEMGETINFO
+" iab cudaMemcpy CUDAMEMCPY
+" iab cudaMemcpy2D CUDAMEMCPY2D
+" iab cudaMemcpy2DArrayToArray CUDAMEMCPY2DARRAYTOARRAY
+" iab cudaMemcpy2DAsync CUDAMEMCPY2DASYNC
+" iab cudaMemcpy2DFromArray CUDAMEMCPY2DFROMARRAY
+" iab cudaMemcpy2DToArray CUDAMEMCPY2DTOARRAY
+" iab cudaMemcpy3D CUDAMEMCPY3D
+" iab cudaMemcpy3DAsync CUDAMEMCPY3DASYNC
+" iab cudaMemcpy3DParms CUDAMEMCPY3DPARMS
+" iab cudaMemcpyArraytoArray CUDAMEMCPYARRAYTOARRAY
+" iab cudaMemcpyAsync CUDAMEMCPYASYNC
+" iab cudaMemcpyDeviceToDevice CUDAMEMCPYDEVICETODEVICE
+" iab cudaMemcpyDeviceToHost CUDAMEMCPYDEVICETOHOST
+" iab cudaMemcpyFromArray CUDAMEMCPYFROMARRAY
+" iab cudaMemcpyFromSymbol CUDAMEMCPYFROMSYMBOL
+" iab cudaMemcpyFromSymbolAsync CUDAMEMCPYFROMSYMBOLASYNC
+" iab cudaMemcpyHostToDevice CUDAMEMCPYHOSTTODEVICE
+" iab cudaMemcpyPeer CUDAMEMCPYPEER
+" iab cudaMemcpyPeerAsync CUDAMEMCPYPEERASYNC
+" iab cudaMemcpyToArray CUDAMEMCPYTOARRAY
+" iab cudaMemcpyToSymbol CUDAMEMCPYTOSYMBOL
+" iab cudaMemcpyToSymbolAsync CUDAMEMCPYTOSYMBOLASYNC
+" iab cudaMemset CUDAMEMSET
+" iab cudaMemset2D CUDAMEMSET2D
+" iab cudaMemset3D CUDAMEMSET3D
+" iab cudaPeekAtLastError CUDAPEEKATLASTERROR
+" iab cudaPitchedPtr CUDAPITCHEDPTR
+" iab cudaPointerGetAttributes CUDAPOINTERGETATTRIBUTES
+" iab cudaRuntimeGetVersion CUDARUNTIMEGETVERSION
+" iab cudaSetDevice CUDASETDEVICE
+" iab cudaSetDeviceFlags CUDASETDEVICEFLAGS
+" iab cudaSetDoubleForDevice CUDASETDOUBLEFORDEVICE
+" iab cudaSetDoubleForHost CUDASETDOUBLEFORHOST
+" iab cudaSetValidDevices CUDASETVALIDDEVICES
+" iab cudaSharedMemBankSizeDefault CUDASHAREDMEMBANKSIZEDEFAULT
+" iab cudaSharedMemBankSizeEightByte CUDASHAREDMEMBANKSIZEEIGHTBYTE
+" iab cudaSharedMemBankSizeFourByte CUDASHAREDMEMBANKSIZEFOURBYTE
+" iab cudaStreamCreate CUDASTREAMCREATE
+" iab cudaStreamDestroy CUDASTREAMDESTROY
+" iab cudaStreamQuery CUDASTREAMQUERY
+" iab cudaStreamSynchronize CUDASTREAMSYNCHRONIZE
+" iab cudaStreamWaitEvent CUDASTREAMWAITEVENT
+" iab cudaSuccess CUDASUCCESS
+" iab cudaSymbol CUDASYMBOL
+" iab cudaThreadExit CUDATHREADEXIT
+" iab cudaThreadSynchronize CUDATHREADSYNCHRONIZE
+" iab cuda_count_kind CUDA_COUNT_KIND
+" iab cuda_stream_kind CUDA_STREAM_KIND
+" iab cudadeviceprop CUDADEVICEPROP
+" iab cycle CYCLE
+" iab dabs DABS
+" iab dacos DACOS
+" iab dasin DASIN
+" iab data DATA
+" iab datan DATAN
+" iab datan2 DATAN2
+" iab date_and_time DATE_AND_TIME
+" iab dble DBLE
+" iab dcmplx DCMPLX
+" iab dconjg DCONJG
+" iab dcos DCOS
+" iab dcosh DCOSH
+" iab ddim DDIM
+" iab deallocate DEALLOCATE
+" iab decimal DECIMAL
+" iab default DEFAULT
+" iab deferred DEFERRED
+" iab define DEFINE
+" iab delim DELIM
+" iab derf DERF
+" iab derfc DERFC
+" iab device DEVICE
+" iab dexp DEXP
+" iab dfloat DFLOAT
+" iab dgamma DGAMMA
+" iab digits DIGITS
+" iab dim DIM
+" iab dim1 DIM1
+" iab dim2 DIM2
+" iab dim3 DIM3
+" iab dim4 DIM4
+" iab dimag DIMAG
+" iab dimension DIMENSION
+" iab dint DINT
+" iab direct DIRECT
+" iab dlgama DLGAMA
+" iab dlog DLOG
+" iab dlog10 DLOG10
+" iab dmax1 DMAX1
+" iab dmin1 DMIN1
+" iab dmod DMOD
+" iab dnint DNINT
+" iab do DO
+" iab dot_product DOT_PRODUCT
+" iab double complex double COMPLEX
+" iab double precision double PRECISION
+" iab dprod DPROD
+" iab dshiftl DSHIFTL
+" iab dshiftr DSHIFTR
+" iab dsign DSIGN
+" iab dsin DSIN
+" iab dsinh DSINH
+" iab dsqrt DSQRT
+" iab dtan DTAN
+" iab dtanh DTANH
+" iab elemental ELEMENTAL
+" iab elif ELIF
+" iab else ELSE
+" iab elsewhere ELSEWHERE
+" iab end END
+" iab endfile ENDFILE
+" iab endif ENDIF
+" iab entry ENTRY
+" iab enum ENUM
+" iab enumerator ENUMERATOR
+" iab eor EOR
+" iab eoshift EOSHIFT
+" iab epsilon EPSILON
+" iab equivalence EQUIVALENCE
+" iab eqv EQV
+" iab erf ERF
+" iab erfc ERFC
+" iab erfc_scaled ERFC_SCALED
+" iab error_unit ERROR_UNIT
+" iab execute_command_line EXECUTE_COMMAND_LINE
+" iab exist EXIST
+" iab exit EXIT
+" iab exp EXP
+" iab exponent EXPONENT
+" iab extends EXTENDS
+" iab extends_type_of EXTENDS_TYPE_OF
+" iab external EXTERNAL
+" iab false FALSE
+" iab file FILE
+" iab file_storage_size FILE_STORAGE_SIZE
+" iab final FINAL
+" iab findloc FINDLOC
+" iab float FLOAT
+" iab floor FLOOR
+" iab flush FLUSH
+" iab fmt FMT
+" iab forall FORALL
+" iab form FORM
+" iab format FORMAT
+" iab formatted FORMATTED
+" iab fraction FRACTION
+" iab function FUNCTION
+" iab gamma GAMMA
+" iab generic GENERIC
+" iab get_command GET_COMMAND
+" iab get_command_argument GET_COMMAND_ARGUMENT
+" iab get_environment_variable GET_ENVIRONMENT_VARIABLE
+" iab global GLOBAL
+" iab go to go TO
+" iab gpu_time GPU_TIME
+" iab host HOST
+" iab huge HUGE
+" iab hypot HYPOT
+" iab iabs IABS
+" iab iachar IACHAR
+" iab iall IALL
+" iab iand IAND
+" iab iany IANY
+" iab ibclr IBCLR
+" iab ibits IBITS
+" iab ibset IBSET
+" iab ichar ICHAR
+" iab idim IDIM
+" iab idint IDINT
+" iab idnint IDNINT
+" iab ieee_arithmetic IEEE_ARITHMETIC
+" iab ieee_get_underflow_mode IEEE_GET_UNDERFLOW_MODE
+" iab ieee_set_underflow_mode IEEE_SET_UNDERFLOW_MODE
+" iab ieee_support_underflow_control IEEE_SUPPORT_UNDERFLOW_CONTROL
+" iab ieor IEOR
+" iab if IF
+" iab ifdef IFDEF
+" iab ifix IFIX
+" iab ifndef IFNDEF
+" iab image_index IMAGE_INDEX
+" iab implicit IMPLICIT
+" iab import IMPORT
+" iab impure IMPURE
+" iab in IN
+" iab include INCLUDE
+" iab index INDEX
+" iab inout INOUT
+" iab input_unit INPUT_UNIT
+" iab inquire INQUIRE
+" iab int INT
+" iab integer INTEGER
+" iab intent INTENT
+" iab interface INTERFACE
+" iab intrinsic INTRINSIC
+" iab iomsg IOMSG
+" iab ior IOR
+" iab iostat IOSTAT
+" iab iostat_end IOSTAT_END
+" iab iostat_eor IOSTAT_EOR
+" iab iparity IPARITY
+" iab iqint IQINT
+" iab is_iostat_end IS_IOSTAT_END
+" iab is_iostat_eor IS_IOSTAT_EOR
+" iab ishft ISHFT
+" iab ishftc ISHFTC
+" iab isign ISIGN
+" iab iso_c_binding ISO_C_BINDING
+" iab iso_fortran_env ISO_FORTRAN_ENV
+" iab kind KIND
+" iab lbound LBOUND
+" iab lcobound LCOBOUND
+" iab leadz LEADZ
+" iab len LEN
+" iab len_trim LEN_TRIM
+" iab lge LGE
+" iab lgt LGT
+" iab lle LLE
+" iab llt LLT
+" iab log LOG
+" iab log10 LOG10
+" iab log_gamma LOG_GAMMA
+" iab logical LOGICAL
+" iab maskl MASKL
+" iab maskr MASKR
+" iab matmul MATMUL
+" iab max MAX
+" iab max0 MAX0
+" iab max1 MAX1
+" iab maxexponent MAXEXPONENT
+" iab maxloc MAXLOC
+" iab maxval MAXVAL
+" iab merge MERGE
+" iab merge_bits MERGE_BITS
+" iab min MIN
+" iab min0 MIN0
+" iab min1 MIN1
+" iab minexponent MINEXPONENT
+" iab minloc MINLOC
+" iab minval MINVAL
+" iab mod MOD
+" iab module MODULE
+" iab modulo MODULO
+" iab move_alloc MOVE_ALLOC
+" iab mvbits MVBITS
+" iab name NAME
+" iab named NAMED
+" iab namelist NAMELIST
+" iab nearest NEAREST
+" iab new_line NEW_LINE
+" iab newunit NEWUNIT
+" iab nextrec NEXTREC
+" iab nint NINT
+" iab nml NML
+" iab non_intrinsic NON_INTRINSIC
+" iab non_overridable NON_OVERRIDABLE
+" iab none NONE
+" iab nopass NOPASS
+" iab norm2 NORM2
+" iab not NOT
+" iab null NULL
+" iab nullify NULLIFY
+" iab num_images NUM_IMAGES
+" iab number NUMBER
+" iab numeric_storage_size NUMERIC_STORAGE_SIZE
+" iab omp OMP
+" iab only ONLY
+" iab open OPEN
+" iab opened OPENED
+" iab operator OPERATOR
+" iab optional OPTIONAL
+" iab or OR
+" iab out OUT
+" iab output_unit OUTPUT_UNIT
+" iab pack PACK
+" iab pad PAD
+" iab parameter PARAMETER
+" iab parity PARITY
+" iab pass PASS
+" iab pause PAUSE
+" iab pinned PINNED
+" iab pointer POINTER
+" iab popcnt POPCNT
+" iab poppar POPPAR
+" iab position POSITION
+" iab precision PRECISION
+" iab present PRESENT
+" iab print PRINT
+" iab private PRIVATE
+" iab procedure PROCEDURE
+" iab product PRODUCT
+" iab program PROGRAM
+" iab protected PROTECTED
+" iab public PUBLIC
+" iab pure PURE
+" iab qabs QABS
+" iab qacos QACOS
+" iab qasin QASIN
+" iab qatan QATAN
+" iab qatan2 QATAN2
+" iab qcmplx QCMPLX
+" iab qconjg QCONJG
+" iab qcos QCOS
+" iab qcosh QCOSH
+" iab qdim QDIM
+" iab qerf QERF
+" iab qerfc QERFC
+" iab qexp QEXP
+" iab qgamma QGAMMA
+" iab qimag QIMAG
+" iab qlgama QLGAMA
+" iab qlog QLOG
+" iab qlog10 QLOG10
+" iab qmax1 QMAX1
+" iab qmin1 QMIN1
+" iab qmod QMOD
+" iab qnint QNINT
+" iab qsign QSIGN
+" iab qsin QSIN
+" iab qsinh QSINH
+" iab qsqrt QSQRT
+" iab qtan QTAN
+" iab qtanh QTANH
+" iab radix RADIX
+" iab random_number RANDOM_NUMBER
+" iab random_seed RANDOM_SEED
+" iab range RANGE
+" iab read READ
+" iab readwrite READWRITE
+" iab real REAL
+" iab rec REC
+" iab recl RECL
+" iab recursive RECURSIVE
+" iab repeat REPEAT
+" iab reshape RESHAPE
+" iab result RESULT
+" iab return RETURN
+" iab rewind REWIND
+" iab round ROUND
+" iab rrspacing RRSPACING
+" iab same_type_as SAME_TYPE_AS
+" iab save SAVE
+" iab scale SCALE
+" iab scan SCAN
+" iab select SELECT
+" iab selected_char_kind SELECTED_CHAR_KIND
+" iab selected_int_kind SELECTED_INT_KIND
+" iab selected_real_kind SELECTED_REAL_KIND
+" iab sequence SEQUENCE
+" iab sequential SEQUENTIAL
+" iab set_exponent SET_EXPONENT
+" iab shape SHAPE
+" iab shared SHARED
+" iab shifta SHIFTA
+" iab shiftl SHIFTL
+" iab shiftr SHIFTR
+" iab sign SIGN
+" iab sin SIN
+" iab sinh SINH
+" iab size SIZE
+" iab sizeof SIZEOF
+" iab sngl SNGL
+" iab spacing SPACING
+" iab spread SPREAD
+" iab sqrt SQRT
+" iab status STATUS
+" iab stop STOP
+" iab storage_size STORAGE_SIZE
+" iab submodule SUBMODULE
+" iab subroutine SUBROUTINE
+" iab sum SUM
+" iab syncthreads SYNCTHREADS
+" iab syncthreads_and SYNCTHREADS_AND
+" iab syncthreads_count SYNCTHREADS_COUNT
+" iab syncthreads_or SYNCTHREADS_OR
+" iab system_clock SYSTEM_CLOCK
+" iab tan TAN
+" iab tanh TANH
+" iab target TARGET
+" iab texture TEXTURE
+" iab then THEN
+" iab this_image THIS_IMAGE
+" iab threadfence THREADFENCE
+" iab threadfence_block THREADFENCE_BLOCK
+" iab threadfence_system THREADFENCE_SYSTEM
+" iab tiny TINY
+" iab trailz TRAILZ
+" iab transfer TRANSFER
+" iab transpose TRANSPOSE
+" iab trim TRIM
+" iab true TRUE
+" iab type TYPE
+" iab ubound UBOUND
+" iab ucobound UCOBOUND
+" iab undef UNDEF
+" iab unformatted UNFORMATTED
+" iab unit UNIT
+" iab unpack UNPACK
+" iab use USE
+" iab value VALUE
+" iab verify VERIFY
+" iab volatile VOLATILE
+" iab wait WAIT
+" iab warpsize WARPSIZE
+" iab where WHERE
+" iab while WHILE
+" iab write WRITE

@@ -37,8 +37,9 @@ Plugin 'nelstrom/vim-visual-star-search'
 " Plugin 'kana/vim-textobj-user'
 " Plugin 'kana/vim-textobj-lastpat' " Didn't work
 Plugin 'yegappan/mru'
-" Plugin 'puremourning/vimspector'
+Plugin 'puremourning/vimspector'
 Plugin 'psf/black'
+Plugin 'embear/vim-localvimrc'
 
 " Linter
 
@@ -63,8 +64,27 @@ call vundle#end()
 filetype plugin indent on
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" MISCELLANEOUS SETTINGS
+" DEBUGGER
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+let g:vimspector_install_gadgets = ['debugpy']
+let g:vimspector_enable_mappings = 'HUMAN'
+
+" mnemonic 'di' = 'debug inspect' (pick your own, if you prefer!)
+
+" for normal mode - the word under the cursor
+nmap <Leader>di <Plug>VimspectorBalloonEval
+" for visual mode, the visually selected text
+xmap <Leader>di <Plug>VimspectorBalloonEval
+
+nmap <LocalLeader><F11> <Plug>VimspectorUpFrame
+nmap <LocalLeader><F12> <Plug>VimspectorDownFrame
+nmap <LocalLeader>B     <Plug>VimspectorBreakpoints
+nmap <LocalLeader>D     <Plug>VimspectorDisassemble
+
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" COMPLETION AND LINTING
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 " let g:ale_completion_enabled = 1
 let g:deoplete#enable_at_startup = 1
@@ -73,6 +93,44 @@ let g:coc_node_path = '~/miniconda3/envs/vim/bin/node'
 let g:python3_host_prog = '~/miniconda3/envs/vim/bin/python'
 " let g:python3_host_prog = '~/.vim/python'
 
+" let g:ale_lint_on_text_changed = 'never'
+let g:ale_echo_msg_error_str = 'E'
+let g:ale_echo_msg_warning_str = 'W'
+let g:ale_echo_msg_format = '[%linter%] %s [%severity%]'
+
+" Disable all by default, enable per project
+" let g:ale_linters = {
+" \   'python': [],
+" \}
+
+" let g:ale_linters = {
+" \   'python': ['flake8'],
+" \}
+
+" inoremap <silent><expr> <TAB> coc#pum#visible() ? coc#pum#confirm() : "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"
+" inoremap <silent><expr> <Tab> complete_info(['selected'])['selected'] != -1 ? "\<C-y>" : "\<Tab>"
+
+" use <tab> to trigger completion and navigate to the next complete item
+" function! CheckBackspace() abort
+"   let col = col('.') - 1
+"   return !col || getline('.')[col - 1]  =~# '\s'
+" endfunction
+
+" inoremap <silent><expr> <Tab>
+"       \ coc#pum#visible() ? coc#pum#next(1) :
+"       \ CheckBackspace() ? "\<Tab>" :
+"       \ coc#refresh()
+
+inoremap <expr> <Tab> coc#pum#visible() ? coc#pum#next(1) : "\<Tab>"
+inoremap <expr> <S-Tab> coc#pum#visible() ? coc#pum#prev(1) : "\<S-Tab>"
+inoremap <expr> <cr> coc#pum#visible() ? coc#pum#confirm() : "\<CR>"
+
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" MISCELLANEOUS SETTINGS
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+let g:localvimrc_persistent = 1
 
 let g:netrw_list_hide = '\(^\|\s\s\)\zs\.\S\+'
 
