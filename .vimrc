@@ -31,15 +31,16 @@ Plugin 'godlygeek/tabular'
 " Plugin 'nvie/vim-flake8'
 Plugin 'kien/ctrlp.vim'
 Plugin 'NLKNguyen/papercolor-theme'
-Plugin 'sigvaldm/vim-ipython'
+" Plugin 'sigvaldm/vim-ipython'
 Plugin 'nelstrom/vim-visual-star-search'
 " Plugin 'vim-latex/vim-latex'
 " Plugin 'xuhdev/vim-latex-live-preview'
 " Plugin 'kana/vim-textobj-user'
 " Plugin 'kana/vim-textobj-lastpat' " Didn't work
+Plugin 'editorconfig/editorconfig-vim'
 Plugin 'yegappan/mru'
 if v:version > 705
-	Plugin 'Valloric/YouCompleteMe'
+	" Plugin 'Valloric/YouCompleteMe'
 endif
 
 call vundle#end()
@@ -114,6 +115,11 @@ set mouse=a
 " support. In arch linux this is the package gvim (which also includes gvim)
 
 " set grepprg=grep\ -n\ $*
+
+set foldmethod=syntax
+let fortran_fold=1
+" let fortran_fold_conditionals=1
+" let fortran_fold_multilinecomments=1
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " KEY BINDINGS
