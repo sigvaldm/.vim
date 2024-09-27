@@ -1,24 +1,34 @@
 # .vim
-My personal Vim configuration
+My personal Vim/NeoVim configuration
 
 Installation:
 ```
+conda env create
 cd ~
 git clone --recursive https://github.com/sigvaldm/.vim # recursive is important
-ln -s .vim/.vimrc .vimrc
-vim
+ln -s .vim/.vimrc .vimrc # For Vim
+ln -s ~/.vim/init.vim .config/nvim/init.vim # For NeoVim
+vim +PluginInstall +qa!
+vim +CocInstall coc-pyright +qa!
+vim +VimspectorInstall +qa!
 ```
-and inside vim:
+Then,
 ```
-:PluginInstall
+conda activate vim
+which python
+which node
 ```
-The plugin YouCompleteMe consists of a compiled part in addition to Vim script.
-To compile and install this from shell:
+Open `.vimrc` and update the path on the following line:
 ```
-cd .vim/bundle/YouCompleteMe
-./install.py --clang-completer --system-libclang
+let g:python3_host_prog = '~/miniconda3/envs/vim/bin/python'
+let g:coc_node_path = '~/miniconda3/envs/vim/bin/node'
 ```
-The `--clang-completer` flag is to get support for C-family languages through clang.
-Other flags exists for Java, Rust, etc. On most systems `--system-libclang` is
-unnecessary (shouldn't be used) but on e.g. Arch this must be included.
-See https://github.com/Valloric/YouCompleteMe/issues/778 .
+
+## Summary of functionality and customizations
+
+### IntelliSense
+
+#### jedi-vim
+
+- `K` See docstring
+- `\d` Go to definition
