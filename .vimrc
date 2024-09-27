@@ -36,7 +36,6 @@ Plugin 'nelstrom/vim-visual-star-search'
 " Plugin 'xuhdev/vim-latex-live-preview'
 " Plugin 'kana/vim-textobj-user'
 " Plugin 'kana/vim-textobj-lastpat' " Didn't work
-Plugin 'editorconfig/editorconfig-vim'
 Plugin 'yegappan/mru'
 Plugin 'psf/black'
 Plugin 'embear/vim-localvimrc'
