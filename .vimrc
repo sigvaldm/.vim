@@ -37,9 +37,15 @@ Plugin 'nelstrom/vim-visual-star-search'
 " Plugin 'kana/vim-textobj-user'
 " Plugin 'kana/vim-textobj-lastpat' " Didn't work
 Plugin 'yegappan/mru'
-Plugin 'puremourning/vimspector'
 Plugin 'psf/black'
 Plugin 'embear/vim-localvimrc'
+Plugin 'editorconfig/editorconfig-vim'
+
+" Debugger
+
+Plugin 'puremourning/vimspector'
+Plugin 'mfussenegger/nvim-dap'
+Plugin 'mfussenegger/nvim-dap-python'
 
 " Linter
 
@@ -89,8 +95,8 @@ nmap <LocalLeader>D     <Plug>VimspectorDisassemble
 " let g:ale_completion_enabled = 1
 let g:deoplete#enable_at_startup = 1
 let g:jedi#completions_enabled = 0
-let g:coc_node_path = '~/miniconda3/envs/vim/bin/node'
-let g:python3_host_prog = '~/miniconda3/envs/vim/bin/python'
+let g:coc_node_path = '~/.conda/envs/vim/bin/node'
+let g:python3_host_prog = '~/.conda/envs/vim/bin/python'
 " let g:python3_host_prog = '~/.vim/python'
 
 " let g:ale_lint_on_text_changed = 'never'
@@ -99,6 +105,7 @@ let g:ale_echo_msg_warning_str = 'W'
 let g:ale_echo_msg_format = '[%linter%] %s [%severity%]'
 
 " Disable all by default, enable per project
+let g:ale_linters_explicit = 1
 " let g:ale_linters = {
 " \   'python': [],
 " \}
